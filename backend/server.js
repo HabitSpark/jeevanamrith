@@ -20,7 +20,7 @@ connectDB();
 
 // CORS Configuration
 const corsOptions = {
-    origin: process.env.CLIENT_URL || "http://localhost:3000", // Allow frontend origin
+    origin: ["jeevanamrith-w74v.vercel.app"], // Allow frontend origin
     methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
     credentials: true, // Allow cookies
 };
