@@ -1,0 +1,46 @@
+/* Order Confirmation Page Styles */
+
+.order-confirmation {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f95d;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.order-confirmation h2 {
+    margin-bottom: 20px;
+}
+
+.order-details {
+    margin: 20px 0;
+    text-align: left;
+}
+
+.order-details h3 {
+    margin-bottom: 10px;
+}
+
+.order-details p {
+    margin: 5px 0;
+    font-size: 1rem;
+    color: #555;
+}
+
+.continue-shopping-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.continue-shopping-btn:hover {
+    background-color: #218838;
+}

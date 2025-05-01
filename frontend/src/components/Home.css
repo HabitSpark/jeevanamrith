@@ -1,0 +1,990 @@
+* {
+    padding: 0;
+    margin: 0;
+    /* overflow: hidden; */
+}
+
+.container {
+    background-color: #FFFBE9;
+}
+
+.body {
+    background-image: url(./../assets/background.jpg);
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    /* Use vw for full viewport width */
+    height: 100vh;
+    /* Use vh for full viewport height */
+    background-size: cover;
+    /* Ensures the image covers the entire area */
+    background-position: center;
+    /* Centers the background image */
+    background-repeat: no-repeat;
+    /* Prevents tiling of the image */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 20px;
+    animation: fadeIn 1.5s ease-in-out;
+    overflow: hidden;
+}
+
+.body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.body>* {
+    position: relative;
+    z-index: 2;
+}
+
+
+/* Title Styling with 3D Effect & Animation */
+
+.titles .title {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, #ffcc29, #ff8c00, #e6b800);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientMove 3s ease infinite, fadeInDown 1.5s ease-in-out;
+    text-shadow: 3px 3px 6px rgba(255, 204, 41, 0.7);
+    letter-spacing: 3px;
+    transform: perspective(500px) rotateX(15deg);
+}
+
+
+/* Subtitle with Glowing & Wave Effect */
+
+.sub-title h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+    margin-top: 20px;
+    line-height: 1.5;
+    color: #fcfcfc;
+    animation: slideInUp 1.5s ease-in-out, glowText 1.5s infinite alternate;
+    text-shadow: 0px 0px 20px rgba(9, 9, 9, 0.9);
+}
+
+
+/* Neon Glowing Effect for Both */
+
+.title,
+.sub-title h2 {
+    text-shadow: 0 0 15px rgba(255, 204, 41, 0.9), 0 0 25px rgba(255, 165, 0, 0.6);
+    text-align: center;
+}
+
+
+/* 3D Floating Effect */
+
+.title:hover,
+.sub-title h2:hover {
+    transform: perspective(500px) rotateX(10deg) translateY(-5px);
+    transition: transform 0.4s ease-in-out;
+}
+
+
+/* ======= Animations ======= */
+
+
+/* Gradient Color Animation */
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* Fade-in Drop Effect */
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Slide-in Bottom to Top */
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Glowing Text Animation */
+
+@keyframes glowText {
+    0% {
+        text-shadow: 0px 0px 10px rgba(255, 204, 41, 0.6);
+    }
+    100% {
+        text-shadow: 0px 0px 25px rgba(255, 204, 41, 1);
+    }
+}
+
+@media (max-width: 768px) {
+    .titles .title {
+        font-size: 3rem;
+        /* Smaller font size for tablets */
+    }
+    .sub-title h2 {
+        font-size: 1.8rem;
+        /* Smaller font size for tablets */
+    }
+}
+
+
+/* For Mobile Devices */
+
+@media (max-width: 480px) {
+    .titles .title {
+        font-size: 2.5rem;
+        /* Smaller font size for mobile */
+        letter-spacing: 2px;
+        /* Reduced letter spacing */
+    }
+    .sub-title h2 {
+        font-size: 1.5rem;
+        /* Smaller font size for mobile */
+    }
+    .body {
+        padding: 30px 15px;
+        /* Reduced padding for mobile */
+    }
+}
+
+
+/* For Very Small Screens */
+
+@media (max-width: 360px) {
+    .titles .title {
+        font-size: 2rem;
+        /* Even smaller font size for very small screens */
+    }
+    .sub-title h2 {
+        font-size: 1.2rem;
+        /* Even smaller font size for very small screens */
+    }
+}
+
+
+/* Background Animated Particles */
+
+.body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("./../assets/leaf-pattern.png");
+    opacity: 0.1;
+    animation: moveBackground 10s linear infinite;
+    z-index: 0;
+}
+
+
+/* Button Styling */
+
+.explore-btn {
+    margin-top: 30px;
+    padding: 12px 30px;
+    background: #ffcc29;
+    color: #0c3b2e;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    animation: scaleIn 1.5s ease-in-out;
+}
+
+.explore-btn:hover {
+    background: #e6b800;
+    transform: scale(1.1);
+}
+
+
+/* Animations */
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .titles .title {
+        font-size: 2.5rem;
+    }
+    .sub-title h2 {
+        font-size: 1.5rem;
+    }
+    .explore-btn {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+}
+
+.about-section {
+    text-align: center;
+    padding: 10px 0px;
+    background: linear-gradient(135deg, #f6e6cc, #ffebba);
+    /* Slightly transparent background */
+    color: #333;
+    margin-top: 50px;
+}
+
+.about-body {
+    display: flex;
+}
+
+.about-head {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets/about.jpg) no-repeat center center;
+    background-size: cover;
+    /* Ensures the image fully covers the container */
+    background-attachment: fixed;
+    /* Optional: Creates a parallax effect */
+    animation: fadeInBg 2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* Optional: Smooth fade-in effect */
+
+@keyframes fadeInBg {
+    from {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.img-container {
+    display: flex;
+    align-items: center;
+    /* Aligns images vertically in the middle */
+    gap: 20px;
+    /* Space between img1 and the column of img2 & img3 */
+}
+
+
+/* Main Image (Left Side) */
+
+.img1 {
+    width: 350px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-left: 20px;
+    margin-top: 50px;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+
+/* Right Side Container (Holds img2 & img3 in a vertical stack) */
+
+.img-column {
+    display: grid;
+    flex-direction: row;
+    /* Makes images stack vertically */
+    /* justify-content: space-between; */
+    /* Distributes img2 and img3 evenly */
+    height: 450px;
+    /* Same height as img1 */
+}
+
+.imges {
+    display: grid;
+    gap: 10px;
+    margin-top: 60px;
+}
+
+
+/* Image 2 & Image 3 (Stacked in One Column) */
+
+.img2,
+.img3 {
+    width: 250px;
+    height: 220px;
+    /* Both images will fit inside img-column */
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+
+/* Optional Hover Effect */
+
+.img1:hover,
+.img2:hover,
+.img3:hover {
+    transform: scale(1.05);
+    box-shadow: 15px 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Arranging img2 and img3 in a vertical stack */
+
+.img2 {
+    transform: rotateY(10deg) rotateX(-5deg) translateY(-10px);
+}
+
+.img3 {
+    transform: rotateY(10deg) rotateX(-5deg) translateY(10px);
+}
+
+
+/* Hover effects for 3D animation */
+
+.img-container img:hover {
+    transform: rotateY(0deg) rotateX(0deg) scale(1.1);
+    box-shadow: 15px 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+
+/* Floating animation for a smooth effect */
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotateY(10deg) rotateX(5deg);
+    }
+    50% {
+        transform: translateY(-10px) rotateY(-10deg) rotateX(-5deg);
+    }
+    100% {
+        transform: translateY(0) rotateY(10deg) rotateX(5deg);
+    }
+}
+
+.img2,
+.img3 {
+    animation: float 4s infinite ease-in-out;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    color: #008000;
+    /* Green for Ayurveda theme */
+    margin-bottom: 15px;
+}
+
+.about-text {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.titles {
+    text-align: center;
+    margin: 50px auto;
+    padding: 20px;
+    max-width: 800px;
+    position: relative;
+    perspective: 1000px;
+    /* Adds 3D depth */
+}
+
+
+/* Title Styling */
+
+.titles h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #a8a806;
+    /* Herbal green */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+    /* transform: rotateX(10deg) rotateY(-5deg); */
+    transition: transform 0.5s ease, text-shadow 0.5s ease;
+}
+
+
+/* Subtitle Styling */
+
+.titles p {
+    font-size: 1.3rem;
+    color: #4c4eaf;
+    /* Soft green */
+    font-style: italic;
+    margin-top: 10px;
+    transform: rotateX(5deg) rotateY(5deg);
+    transition: transform 0.5s ease, text-shadow 0.5s ease;
+}
+
+
+/* 3D Hover Effect */
+
+.titles:hover h2 {
+    transform: rotateX(0deg) rotateY(0deg) scale(1.1);
+    text-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.titles:hover p {
+    transform: rotateX(0deg) rotateY(0deg) scale(1.05);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Floating Animation */
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.titles h2,
+.titles p {
+    /* animation: float 3s infinite ease-in-out; */
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .titles h2 {
+        font-size: 2rem;
+    }
+    .titles p {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .titles {
+        padding: 10px;
+    }
+    .titles h2 {
+        font-size: 1.8rem;
+    }
+    .titles p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Service section css */
+
+.services-section {
+    padding: 60px 20px;
+    background: #f8f4f0;
+}
+
+.service-head {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    color: #fff;
+    font-family: 'Georgia', serif;
+}
+
+.services-subtitle {
+    font-size: 1.1rem;
+    color: #7a6f5a;
+    margin-top: 10px;
+}
+
+.services-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.service-card {
+    background: #fffefc;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e5ded6;
+}
+
+.service-card h3 {
+    font-size: 1.4rem;
+    color: #3b2f1f;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #5a4f42;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    background-color: #fdf9f3;
+}
+
+
+/* Treatment Section Styling */
+
+.treatment-section {
+    text-align: center;
+    padding: 20px 5px;
+    background: linear-gradient(135deg, #f6e6cc, #ffebba);
+}
+
+
+/* Section Title */
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #5a3d2b;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+
+/* Section Subtitle */
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #775c46;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.2s ease-in-out forwards;
+}
+
+
+/* Treatment Grid Layout */
+
+.treatment-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 3px;
+    max-width: 1000px;
+    margin: auto;
+    /* overflow: hidden; */
+}
+
+
+/* Treatment Card */
+
+.treatment-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.9);
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+/* Image Wrapper for Circular Shape */
+
+.image-wrapper {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #b3825d;
+    transition: transform 0.3s ease;
+}
+
+
+/* Treatment Image */
+
+.treatment-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Treatment Name */
+
+.treatment-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #5a3d2b;
+    margin-top: 15px;
+    text-transform: capitalize;
+}
+
+
+/* Hover Effect */
+
+.treatment-card:hover .image-wrapper {
+    transform: scale(1.1);
+    border-color: #ffcc00;
+}
+
+
+/* Animations */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .treatment-grid {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+}
+
+.service-section {
+    /* display: flex; */
+}
+
+.service-head {
+    position: relative;
+    width: 100%;
+    height: 50vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(../assets//about/about-footer.jpg) no-repeat center center;
+    background-size: cover;
+    /* Ensures the image fully covers the container */
+    background-attachment: fixed;
+    /* Optional: Creates a parallax effect */
+    animation: fadeInBg 2s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+/* ====== Services Section ====== */
+
+.services-section {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #f4f4f4, #e0e0e0);
+    color: #333;
+}
+
+.service-head {
+    margin-bottom: 50px;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #008000;
+    /* Ayurveda green */
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateY(-30px);
+    animation: fadeInUp 1s ease-in-out forwards;
+}
+
+.services-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 30px;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1.2s ease-in-out forwards;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.service-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 0.8s ease-in-out forwards;
+}
+
+.service-card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.service-card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.service-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.service-card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #008000;
+    /* Ayurveda green */
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #ffebba, #f6e6cc);
+}
+
+
+/* ====== Animations ====== */
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ====== Responsive Design ====== */
+
+@media (max-width: 768px) {
+    .services-title {
+        font-size: 2rem;
+    }
+    .services-subtitle {
+        font-size: 1rem;
+    }
+    .service-card {
+        padding: 20px;
+    }
+    .service-card h3 {
+        font-size: 1.3rem;
+    }
+    .service-card p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Navbar container */
+
+.navbarr {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgb(46, 49, 79);
+    /* Light ayurvedic tone */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+
+/* Logo */
+
+.logo {
+    font-family: 'Georgia', serif;
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+
+/* Navigation links */
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+
+/* Individual link styles */
+
+.nav-links li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    padding: 6px 12px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+
+/* Hover effect */
+
+.nav-links li a:hover {
+    background-color: #e1d4c8;
+    color: #4b2e0e;
+}
+
+
+/* Active section link */
+
+.nav-links li a.active {
+    background-color: #4b2e0e;
+    color: #fff;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+    .navbarr {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 1rem;
+    }
+    .nav-links li {
+        width: 100%;
+    }
+    .nav-links li a {
+        display: block;
+        width: 100%;
+        padding: 0.75rem 1rem;
+    }
+}

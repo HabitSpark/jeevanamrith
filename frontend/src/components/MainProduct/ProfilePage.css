@@ -1,0 +1,49 @@
+.profile-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.personal-details,
+.order-history {
+    margin-bottom: 30px;
+}
+
+.profile-picture img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.details p {
+    margin: 10px 0;
+}
+
+.order {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.order ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.order li {
+    margin: 5px 0;
+}
+
+.profile-links {
+    margin-top: 20px;
+}
+
+.link-button {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.link-button:hover {
+    text-decoration: underline;
+}

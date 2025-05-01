@@ -1,0 +1,138 @@
+/* General Dashboard Styles */
+
+.delivery-dashboard {
+    background-color: #f4f4f9;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.delivery-dashboard h2 {
+    text-align: center;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+
+/* Loading and Error Handling */
+
+.loading,
+.error {
+    text-align: center;
+    font-size: 18px;
+    color: #ff5722;
+    margin-top: 50px;
+}
+
+
+/* Delivery Information Section */
+
+.delivery-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.delivery-info p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.delivery-info p strong {
+    font-weight: bold;
+    color: black;
+}
+
+
+/* Assigned Orders Section */
+
+.assigned-orders {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+
+/* Order Cards */
+
+.order-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.order-card p {
+    font-size: 16px;
+    color: #333;
+    margin: 8px 0;
+}
+
+
+/* Delivery Done Button */
+
+.delivery-done-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.delivery-done-button:hover {
+    background-color: #45a049;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .delivery-dashboard {
+        padding: 10px;
+    }
+    .delivery-info,
+    .assigned-orders {
+        width: 100%;
+        padding: 15px;
+    }
+    .delivery-dashboard h2 {
+        font-size: 24px;
+    }
+    .delivery-info p,
+    .order-card p {
+        font-size: 16px;
+    }
+    .delivery-done-button {
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .delivery-dashboard h2 {
+        font-size: 20px;
+    }
+    .delivery-info p,
+    .order-card p {
+        font-size: 14px;
+    }
+    .delivery-done-button {
+        padding: 10px;
+        font-size: 16px;
+    }
+}

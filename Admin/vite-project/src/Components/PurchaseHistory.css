@@ -1,0 +1,104 @@
+/* History.css */
+
+.history-container {
+    padding: 20px;
+    color: #000;
+}
+
+.purchase-card {
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+}
+
+.purchase-card h3 {
+    margin-top: 0;
+    color: #000;
+}
+
+.shipping-info p {
+    margin: 5px 0;
+    color: #000;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.product-item {
+    display: flex;
+    gap: 10px;
+    width: 200px;
+    color: #000;
+}
+
+.product-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.error-message {
+    color: red;
+}
+
+.user-purchase-group {
+    margin-bottom: 40px;
+    padding: 20px;
+    border: 2px solid #00a86b;
+    border-radius: 10px;
+    background-color: #f9fff9;
+    color: #000;
+}
+
+.purchase-card {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.product-item {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    color: #000;
+}
+
+.product-item img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.filter-container {
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.filter-container label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #000;
+}
+
+.filter-container select {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: #fff;
+}

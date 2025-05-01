@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* overflow-x: hidden; */
+}
+
+.login-container {
+    display: flex;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+    background: url(./../../assets/img-bg.jpg) no-repeat center center/cover;
+    position: absolute;
+}
+
+.login-container::before {
+    /* content: ""; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.589);
+    /* Dark overlay */
+    z-index: 1;
+}
+
+.login-box {
+    position: relative;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.8);
+    /* border-radius: 50px; */
+    z-index: 2;
+}
+
+.login-card {
+    background: linear-gradient(45deg, #e4eea951, #295430a3, #00c8ff41);
+    background-size: 300% 300%;
+    animation: gradientBackground 6s infinite ease-in-out;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.login-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-shadow: 5px 5px 3px rgba(0, 0, 0, 0.6), 0px 0px 15px rgba(0, 255, 255, 0.9);
+    animation: floatEffect 3s ease-in-out infinite, glowEffect 1.5s alternate infinite;
+}
+
+@keyframes floatEffect {
+    0%,
+    100% {
+        /* transform: translateY(0); */
+    }
+    50% {
+        /* transform: translateY(-8px); */
+    }
+}
+
+
+/* Glowing Effect */
+
+@keyframes glowEffect {
+    0% {
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5), 0px 0px 15px rgba(0, 255, 255, 0.8);
+    }
+    100% {
+        text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.7), 0px 0px 25px rgba(255, 255, 0, 1);
+    }
+}
+
+.login-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.login-form .form-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.login-form .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ccccccc0;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-form .form-input:focus {
+    border-color: #f4e04d;
+    box-shadow: 0 0 5px rgba(124, 77, 255, 0.5);
+    outline: none;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+.forgot-password .forgot-link {
+    font-size: 0.9rem;
+    color: red;
+    text-decoration: none;
+}
+
+.forgot-password .forgot-link:hover {
+    text-decoration: underline;
+}
+
+.submitt-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #00c6ff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: solid 1px black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.submitt-button:hover {
+    background: #1100ff;
+    transform: scale(1.05);
+}
+
+.login-footer {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+.login-footer .login-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+.login-footer .login-link:hover {
+    text-decoration: underline;
+}
+
+
+/* additional style */
+
+
+/* Add to your Login.css */
+
+.spinner {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    margin-right: 0.5rem;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.login-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+
+/* Forgot Password Dialog Box */
+
+.forgot-password-dialog {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Centers the dialog box */
+    overflow: hidden;
+    z-index: 1000;
+    /* Ensures it's above other content */
+}
+
+.forgot-password-dialog h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.forgot-password-dialog .form-group {
+    margin-bottom: 15px;
+}
+
+.forgot-password-dialog .form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.forgot-password-dialog .form-input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+    color: #333;
+}
+
+.forgot-password-dialog .login-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #00a86b;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.forgot-password-dialog .login-button:hover {
+    background-color: #007a54;
+}
+
+.forgot-password-dialog .error-message {
+    color: red;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.forgot-password-dialog button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: grey;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.forgot-password-dialog button:hover {
+    background-color: #555;
+}
+
+
+/* Dialog box styling for responsiveness */
+
+@media (max-width: 500px) {
+    .forgot-password-dialog {
+        width: 90%;
+        padding: 15px;
+    }
+}

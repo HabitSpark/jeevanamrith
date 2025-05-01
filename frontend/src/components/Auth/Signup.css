@@ -1,0 +1,125 @@
+/* Background and container styling */
+
+.signup-container {
+    display: flex;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    /* overflow: hidden; */
+    background: url(./../../assets/img-bg.jpg) no-repeat center center/cover;
+    position: absolute;
+}
+
+.signup-container::before {
+    /* content: ""; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.589);
+    /* Dark overlay */
+    z-index: 1;
+}
+
+
+/* Card styling */
+
+.signup-card {
+    background: linear-gradient(45deg, #e4eea951, #295430a3, #00c8ff41);
+    background-size: 300% 300%;
+    animation: gradientBackground 6s infinite ease-in-out;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    border-radius: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+
+/* Title styling */
+
+.signup-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+
+/* Form styling */
+
+.signup-form .form-group {
+    margin-bottom: 1rem;
+}
+
+.signup-form .form-label {
+    display: block;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.signup-form .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #ccccccc0;
+    border-radius: 8px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.signup-form .form-input:focus {
+    border-color: #f4e04d;
+    box-shadow: 0 0 5px rgba(124, 77, 255, 0.5);
+    outline: none;
+}
+
+
+/* Button styling */
+
+.submitt-button {
+    width: 100%;
+    padding: 0.75rem;
+    background: #00c6ff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.submitt-button:hover {
+    background: #4134fb;
+    transform: scale(1.05);
+}
+
+
+/* Footer styling */
+
+.signup-footer {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.signup-footer .signup-link {
+    color: #616200ce;
+    text-decoration: none;
+}
+
+.signup-footer .signup-link:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
