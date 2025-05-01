@@ -19,12 +19,15 @@ const app = express();
 connectDB();
 
 // CORS Configuration
-const corsOptions = {
-    origin: ["jeevanamrith-w74v.vercel.app"], // Allow frontend origin
-    methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-    credentials: true, // Allow cookies
-};
-app.use(cors(corsOptions));
+const allowedOrigins = [
+  "https://jeevanamrith-w74v.vercel.app", // your frontend
+  "http://localhost:3000" // (optional) for local dev
+];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true, // if you're sending cookies or auth headers
+}));
 
 // Middleware
 app.use(express.json());
