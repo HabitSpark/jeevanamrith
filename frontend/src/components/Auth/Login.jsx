@@ -22,7 +22,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('https://jeevanamrith-onmb.vercel.app/api/auth/login', {
+      const response = await axios.post('https://jeevanamrith-onmb.vercel.app/auth/login', {
         email,
         password,
       });
@@ -47,7 +47,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('https://jeevanamrith-onmb.vercel.app/api/users/send-otp', { email });
+      const response = await axios.post('https://jeevanamrith-onmb.vercel.app/users/send-otp', { email });
       if (response.data.message === "OTP sent successfully") {
         setOtpSent(true);
       } else {
@@ -67,7 +67,7 @@ const Login = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post('https://jeevanamrith-onmb.vercel.app/api/users/reset-password', {
+      const response = await axios.post('https://jeevanamrith-onmb.vercel.app/users/reset-password', {
         email,
         otp,
         newPassword
