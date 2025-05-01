@@ -11,7 +11,7 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://jeevanamrith-onmb.vercel.app/api/users', { name, email, password })
+    axios.post('https://jeevanamrith-onmb.vercel.app/users', { name, email, password })
       .then(result => {
         console.log(result);
         alert('Registration successful! You can now login.'); // Success alert
