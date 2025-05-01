@@ -20,10 +20,11 @@ connectDB();
 
 // CORS Configuration
 const allowedOrigins = [
-  "https://jeevanamrith-w74v.vercel.app", // your frontend Vercel URL
-  "http://localhost:3000", // optional for local dev
+  "https://jeevanamrith-w74v.vercel.app", // Frontend Vercel URL
+  "http://localhost:3000", // Localhost for local development
 ];
 
+// Use CORS middleware
 app.use(cors({
   origin: function (origin, callback) {
     if (!origin || allowedOrigins.includes(origin)) {
@@ -32,7 +33,7 @@ app.use(cors({
       callback(new Error("Not allowed by CORS"));
     }
   },
-  credentials: true,
+  credentials: true, // If you're using cookies or session data
 }));
 
 
